@@ -21,10 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: false,
-    store: store,
+    secret: "secret",      
+    resave: false,     //  for every request to the server we want to create a new session event we do not care about that is the same browser or same user and we do not want this so we set it to false
+    saveUninitialized: false, // if we do not have modeified session then we do not want to save it in our database 
+    store: store, 
   })
 );
 
